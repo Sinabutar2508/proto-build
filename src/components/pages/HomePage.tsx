@@ -75,7 +75,7 @@ const HomePage = () => {
       capacity: '1-4 people',
       features: ['Private & Secure', 'High-speed WiFi', '24/7 Access'],
       gradient: 'from-yellow-400 to-orange-500',
-      image: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=private-office'
+      image: 'https://static.wixstatic.com/media/41c79f_78ece90649ad47f2b68324da72f03cee~mv2.png?originWidth=768&originHeight=576'
     },
     {
       id: 'meeting-room',
@@ -85,7 +85,7 @@ const HomePage = () => {
       capacity: '4-12 people',
       features: ['Conference Tech', 'Whiteboard', 'Catering Options'],
       gradient: 'from-green-400 to-blue-500',
-      image: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=meeting-room'
+      image: 'https://static.wixstatic.com/media/41c79f_7ba57ba6698c40a68be33afbbaa8d382~mv2.png?originWidth=768&originHeight=576'
     },
     {
       id: 'coworking-space',
@@ -95,7 +95,7 @@ const HomePage = () => {
       capacity: '1-20 people',
       features: ['Open Desk Seating', 'Networking Events', 'Community Access'],
       gradient: 'from-purple-400 to-pink-500',
-      image: 'https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=coworking-space'
+      image: 'https://static.wixstatic.com/media/41c79f_0a1059960ad5475cb503352302e16a10~mv2.png?originWidth=768&originHeight=576'
     }
   ];
 
@@ -186,12 +186,12 @@ const HomePage = () => {
             <div className="lg:col-span-3">
               <AnimatedElement>
                 <Image
-                  src="https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png?id=hero-main-office"
-                  alt="A modern and bright office interior with comfortable seating and large windows."
+                  src="https://static.wixstatic.com/media/11062b_b687b5a078ef4bb886c0d14af32f0373~mv2.jpg"
                   width={1200}
                   height={1200}
                   className="rounded-3xl object-cover w-full h-full aspect-[4/3] lg:aspect-auto lg:h-[75vh] shadow-2xl"
-                />
+                  originWidth={2500}
+                  originHeight={1667} />
               </AnimatedElement>
             </div>
             <div className="lg:col-span-2 relative z-10">
