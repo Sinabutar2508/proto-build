@@ -1,9 +1,10 @@
 // HPI 1.5-V
 import React, { useState, useEffect, useRef } from 'react';
-import { Calendar, Clock, MapPin, Users, Wifi, Coffee, Car, Shield, ArrowRight, Building, Star, CheckCircle } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Wifi, Coffee, Car, Shield, ArrowRight, Building, Star, CheckCircle, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Image } from '@/components/ui/image';
+import { Link } from 'react-router-dom';
 
 // --- Types ---
 type OfficeSpace = {
@@ -65,6 +66,7 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({ children, className, 
 // --- Main Homepage Component ---
 const HomePage = () => {
   const [selectedOffice, setSelectedOffice] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const officeSpaces: OfficeSpace[] = [
     {
@@ -180,8 +182,89 @@ const HomePage = () => {
       `}</style>
       <div className="min-h-screen bg-background text-foreground font-paragraph overflow-clip">
         
+        {/* Navigation Header */}
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+          <div className="max-w-[120rem] mx-auto px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <Link to="/" className="text-2xl font-heading font-bold text-foreground">
+                Office Space
+              </Link>
+              
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex items-center space-x-8">
+                <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium">
+                  Home
+                </Link>
+                <Link to="/office-spaces" className="text-foreground hover:text-primary transition-colors font-medium">
+                  Spaces
+                </Link>
+                <Link to="/about" className="text-foreground hover:text-primary transition-colors font-medium">
+                  About
+                </Link>
+                <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
+                  Contact
+                </Link>
+                <Link to="/booking">
+                  <Button className="bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold rounded-xl">
+                    Book Now
+                  </Button>
+                </Link>
+              </nav>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+              <div className="md:hidden py-4 border-t border-gray-200">
+                <nav className="flex flex-col space-y-4">
+                  <Link 
+                    to="/" 
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    to="/office-spaces" 
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Spaces
+                  </Link>
+                  <Link 
+                    to="/about" 
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    to="/contact" 
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                  <Link to="/booking" onClick={() => setIsMenuOpen(false)}>
+                    <Button className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold rounded-xl">
+                      Book Now
+                    </Button>
+                  </Link>
+                </nav>
+              </div>
+            )}
+          </div>
+        </header>
+
         {/* Hero Section */}
-        <section className="w-full min-h-screen lg:h-screen flex items-center py-20 lg:py-0">
+        <section className="w-full min-h-screen lg:h-screen flex items-center py-20 lg:py-0 pt-32 lg:pt-20">
           <div className="max-w-[120rem] mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             <div className="lg:col-span-3">
               <AnimatedElement>
@@ -189,9 +272,7 @@ const HomePage = () => {
                   src="https://static.wixstatic.com/media/11062b_b687b5a078ef4bb886c0d14af32f0373~mv2.jpg"
                   width={1200}
                   height={1200}
-                  className="rounded-3xl object-cover w-full h-full aspect-[4/3] lg:aspect-auto lg:h-[75vh] shadow-2xl"
-                  originWidth={2500}
-                  originHeight={1667} />
+                  className="rounded-3xl object-cover w-full h-full aspect-[4/3] lg:aspect-auto lg:h-[75vh] shadow-2xl" />
               </AnimatedElement>
             </div>
             <div className="lg:col-span-2 relative z-10">
@@ -213,9 +294,11 @@ const HomePage = () => {
                     </div>
                   ))}
                 </div>
-                <Button size="lg" className="gradient-button w-full lg:w-auto bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                  Explore Spaces
-                </Button>
+                <Link to="/office-spaces">
+                  <Button size="lg" className="gradient-button w-full lg:w-auto bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    Explore Spaces
+                  </Button>
+                </Link>
               </AnimatedElement>
             </div>
           </div>
@@ -284,9 +367,11 @@ const HomePage = () => {
                       </div>
                       <div className="mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <p className="text-4xl font-heading font-extrabold text-foreground">{space.price}</p>
-                        <Button onClick={() => handleBooking(space.title)} size="lg" className="gradient-button bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold rounded-xl shadow-md">
-                          Book Now <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
+                        <Link to="/booking">
+                          <Button size="lg" className="gradient-button bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold rounded-xl shadow-md">
+                            Book Now <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </Card>
@@ -403,9 +488,11 @@ const HomePage = () => {
                       <label className="block text-sm font-medium text-foreground/80 mb-2">Message</label>
                       <textarea rows={4} className="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" placeholder="How can we help you?" />
                     </div>
-                    <Button className="w-full gradient-button bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold py-4 rounded-xl shadow-lg">
-                      Send Message
-                    </Button>
+                    <Link to="/contact">
+                      <Button className="w-full gradient-button bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold py-4 rounded-xl shadow-lg">
+                        Send Message
+                      </Button>
+                    </Link>
                   </form>
                 </Card>
               </AnimatedElement>
