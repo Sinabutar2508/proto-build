@@ -185,7 +185,7 @@ const HomePage = () => {
         {/* Navigation Header */}
         <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
           <div className="max-w-[120rem] mx-auto px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-between h-16 bg-background 231, 235)] border-[0px] border-[rgb(229, 231, 235)] border-solid opacity-[1]">
               <Link to="/" className="text-2xl font-heading font-bold text-foreground">{"Keystone HQ"}</Link>
               
               {/* Desktop Navigation */}
