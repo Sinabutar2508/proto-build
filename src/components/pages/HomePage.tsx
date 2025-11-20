@@ -283,7 +283,7 @@ const HomePage = () => {
                   Find and book the perfect workspace for your needs. From private offices to collaborative spaces.
                 </p>
                 <div className="space-y-3 mb-8">
-                  {officeSpaces.slice(0, 2).map((space, index) => (
+                  {officeSpaces.slice(0, 3).map((space, index) => (
                     <div key={space.id} className="bg-white/50 border border-foreground/10 p-4 rounded-2xl flex items-center gap-4 transition-all duration-300 hover:bg-white hover:shadow-lg hover:border-primary">
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${space.gradient} flex-shrink-0`}></div>
                       <div>
