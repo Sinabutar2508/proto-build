@@ -25,7 +25,7 @@ const BookingPage = () => {
       id: 'private-office',
       title: 'Private Office Suite',
       description: 'An enclosed, lockable space designed for focus and confidentiality.',
-      price: '$50/hour',
+      price: '£40/hour',
       capacity: '1-4 people',
       features: ['Private & Secure', 'High-speed WiFi', '24/7 Access'],
       gradient: 'from-yellow-400 to-orange-500'
@@ -34,7 +34,7 @@ const BookingPage = () => {
       id: 'meeting-room',
       title: 'Dynamic Meeting Room',
       description: 'A professional environment equipped with presentation tools.',
-      price: '$75/hour',
+      price: '£60/hour',
       capacity: '4-12 people',
       features: ['Conference Tech', 'Whiteboard', 'Catering Options'],
       gradient: 'from-green-400 to-blue-500'
@@ -43,7 +43,7 @@ const BookingPage = () => {
       id: 'coworking-space',
       title: 'Collaborative Coworking',
       description: 'An open-plan, flexible workspace designed to foster networking.',
-      price: '$25/hour',
+      price: '£25/hour',
       capacity: '1-20 people',
       features: ['Open Desk Seating', 'Networking Events', 'Community Access'],
       gradient: 'from-purple-400 to-pink-500'

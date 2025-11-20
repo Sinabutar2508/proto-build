@@ -73,7 +73,7 @@ const HomePage = () => {
       id: 'private-office',
       title: 'Private Office Suite',
       description: 'An enclosed, lockable space designed for focus and confidentiality. Perfect for teams and individuals needing privacy.',
-      price: '$50/hour',
+      price: '£40/hour',
       capacity: '1-4 people',
       features: ['Private & Secure', 'High-speed WiFi', '24/7 Access'],
       gradient: 'from-yellow-400 to-orange-500',
@@ -83,7 +83,7 @@ const HomePage = () => {
       id: 'meeting-room',
       title: 'Dynamic Meeting Room',
       description: 'A professional environment equipped with presentation tools, ideal for client meetings and team workshops.',
-      price: '$75/hour',
+      price: '£60/hour',
       capacity: '4-12 people',
       features: ['Conference Tech', 'Whiteboard', 'Catering Options'],
       gradient: 'from-green-400 to-blue-500',
@@ -93,7 +93,7 @@ const HomePage = () => {
       id: 'coworking-space',
       title: 'Collaborative Coworking',
       description: 'An open-plan, flexible workspace designed to foster networking and creative collaboration among professionals.',
-      price: '$25/hour',
+      price: '£25/hour',
       capacity: '1-20 people',
       features: ['Open Desk Seating', 'Networking Events', 'Community Access'],
       gradient: 'from-purple-400 to-pink-500',
@@ -125,21 +125,21 @@ const HomePage = () => {
   const pricingPlans: PricingPlan[] = [
     {
         title: 'Standard Membership',
-        price: '$250',
+        price: '£250',
         description: 'Access to all shared amenities and a set number of private office hours.',
         features: ['High-speed Internet', 'Breakout room access', 'Community events'],
         gradient: 'from-primary/80 to-secondary/80'
     },
     {
         title: 'Workspace Plus',
-        price: '$450',
+        price: '£450',
         description: 'Designated desk, parking spot, and extended access to private offices.',
         features: ['Everything in Standard', 'Designated Desk', 'Free Parking'],
         gradient: 'from-accent-purple/80 to-accent-orange/80'
     },
     {
         title: 'Premium Partnership',
-        price: '$800',
+        price: '£800',
         description: 'Full access to networking opportunities, mentorship, and all premium services.',
         features: ['Everything in Plus', 'Exclusive Networking', 'Mentorship Programs'],
         gradient: 'from-secondary/80 to-primary/80'
