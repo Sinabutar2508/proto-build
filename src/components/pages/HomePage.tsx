@@ -262,27 +262,28 @@ const HomePage = () => {
         </header>
 
         {/* Hero Section */}
-        <section className="w-full min-h-screen lg:h-screen flex items-center pt-40 pb-20 lg:pt-32 lg:pb-0">
-          <div className="max-w-[120rem] mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        <section className="w-full min-h-screen flex items-center pt-48 pb-20 lg:pt-40 lg:pb-16">
+          <div className="max-w-[120rem] mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start lg:items-center">
             <div className="lg:col-span-3">
               <AnimatedElement>
                 <Image
                   src="https://static.wixstatic.com/media/11062b_b687b5a078ef4bb886c0d14af32f0373~mv2.jpg"
                   width={1200}
                   height={1200}
-                  className="rounded-3xl object-cover w-full h-full aspect-[4/3] lg:aspect-auto lg:h-[75vh] shadow-2xl" />
+                  alt="Modern office workspace"
+                  className="rounded-3xl object-cover w-full h-full aspect-[4/3] lg:aspect-auto lg:h-[70vh] shadow-2xl" />
               </AnimatedElement>
             </div>
             <div className="lg:col-span-2 relative z-10">
-              <AnimatedElement className="flex flex-col h-full">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black text-foreground mb-6">
+              <AnimatedElement className="flex flex-col justify-start">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black text-foreground mb-8 leading-tight">
                   Your Ideal Office Space
                 </h1>
-                <p className="text-lg text-foreground/70 mb-10 max-w-md">
+                <p className="text-lg text-foreground/70 mb-8 max-w-md">
                   Find and book the perfect workspace for your needs. From private offices to collaborative spaces.
                 </p>
-                <div className="space-y-4 mb-10">
-                  {officeSpaces.slice(0, 3).map((space, index) => (
+                <div className="space-y-3 mb-8">
+                  {officeSpaces.slice(0, 2).map((space, index) => (
                     <div key={space.id} className="bg-white/50 border border-foreground/10 p-4 rounded-2xl flex items-center gap-4 transition-all duration-300 hover:bg-white hover:shadow-lg hover:border-primary">
                       <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${space.gradient} flex-shrink-0`}></div>
                       <div>
@@ -292,7 +293,7 @@ const HomePage = () => {
                     </div>
                   ))}
                 </div>
-                <Link to="/office-spaces">
+                <Link to="/office-spaces" className="inline-block">
                   <Button size="lg" className="gradient-button w-full lg:w-auto bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     Explore Spaces
                   </Button>
