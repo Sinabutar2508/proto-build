@@ -262,7 +262,7 @@ const HomePage = () => {
         </header>
 
         {/* Hero Section */}
-        <section className="w-full min-h-screen flex items-center pt-48 pb-20 lg:pt-40 lg:pb-16">
+        <section className="w-full min-h-screen flex items-center pt-24 pb-20 lg:pt-28 lg:pb-16">
           <div className="max-w-[120rem] mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12 items-start lg:items-center">
             <div className="lg:col-span-3">
               <AnimatedElement>
