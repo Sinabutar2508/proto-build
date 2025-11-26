@@ -457,7 +457,7 @@ const HomePage = () => {
                     </div>
                     <div>
                       <h4 className="text-xl font-heading font-semibold">Location</h4>
-                      <p className="text-foreground/70">123 Business District, City Center</p>
+                      <p className="text-foreground/70">25 Great Portland Street, London, W1W 8QT</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-6">
@@ -530,8 +530,8 @@ const HomePage = () => {
               <div>
                 <h4 className="font-semibold text-lg mb-4">Contact</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li>123 Business District</li>
-                  <li>City Center</li>
+                  <li>25 Great Portland Street</li>
+                  <li>London, W1W 8QT</li>
                   <li>Phone: (555) 123-4567</li>
                   <li>Email: info@officespace.com</li>
                 </ul>
