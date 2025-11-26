@@ -504,7 +504,7 @@ const HomePage = () => {
           <div className="max-w-[120rem] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               <div>
-                <h3 className="text-2xl font-heading font-bold mb-4">Office Space</h3>
+                <h3 className="text-2xl font-heading font-bold mb-4">Keystone HQ</h3>
                 <p className="text-gray-300 font-paragraph">
                   Your premier destination for flexible office solutions in the heart of the city.
                 </p>
@@ -538,7 +538,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-              <p>&copy; 2024 Office Space. All rights reserved. Re-architected by The Digital Architect.</p>
+              <p>&copy; 2024 Keystone HQ. All rights reserved. Re-architected by The Digital Architect.</p>
             </div>
           </div>
         </footer>
